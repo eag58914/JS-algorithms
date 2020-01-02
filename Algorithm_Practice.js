@@ -73,3 +73,20 @@ function validBraces(braces) {
 	}
 	return tracer.length === 0;
 }
+
+//Pig latin exercise - first word to end of the word, add ay to the end
+function pigIt(str) {
+	//split the word into an array
+	var normalArr = str.split(' ');
+	//array for the new array to  be joined
+	var pigArr = [];
+	//join the array to a  new word
+	newWord = '';
+	// loop through the array
+	for (var word in normalArr) {
+		//subtring returns the first letter off the array removed
+		var newWord = normalArr[word].substring(1) + normalArr[word].substring(0, 1) + 'ay';
+		pigArr.push(newWord);
+	}
+	return pigArr.join(' ');
+}
