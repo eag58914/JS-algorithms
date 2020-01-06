@@ -1,3 +1,5 @@
+//These problems come from CodeWars
+
 //PRACTICE #1 Symmetric Difference
 function sym() {
 	var args = [];
