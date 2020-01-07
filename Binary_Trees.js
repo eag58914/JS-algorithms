@@ -143,6 +143,70 @@ class BST {
 		};
 		this.root = removeNode(this.root, data);
 	}
+	//new methods  for BST inOrder
+	//this method first goes over the the left side of the BST then  goes over to the right side as well
+	inOrder() {
+		//check if binary search tree exist
+		if (this.root == null) {
+			return null;
+		} else {
+			var result = new Array();
+			function traverseInOrder(node) {
+				node.left && traverseInOrder(node.left);
+				result.push(node.date);
+				node.right && traverseInOrder(node.right);
+			}
+			traverseInOrder(this.root);
+			return result;
+		}
+	}
+	preOrder() {
+		//check if binary search tree exist
+		if (this.root == null) {
+			return null;
+		} else {
+			var result = new Array();
+			function traverseInOrder(node) {
+				result.push(node.date);
+				node.left && traverseInOrder(node.left);
+				node.right && traverseInOrder(node.right);
+			}
+			traverseInOrder(this.root);
+			return result;
+		}
+	}
+	postOrder() {
+		//check if binary search tree exist
+		if (this.root == null) {
+			return null;
+		} else {
+			var result = new Array();
+			function traverseInOrder(node) {
+				node.left && traverseInOrder(node.left);
+				node.right && traverseInOrder(node.right);
+				result.push(node.date);
+			}
+			traverseInOrder(this.root);
+			return result;
+		}
+	}
+	levelOrder() {
+		let result = [];
+		let Q = [];
+		if (this.root != null) {
+			Q.push(this.root);
+			while (Q.length > 0) {
+				let node = Q.shift();
+				result.push(node.data);
+				if (node.left != null) {
+					Q.push(node.right);
+				}
+			}
+			return result;
+		} else {
+			return null;
+		}
+	}
 }
 const bst = new BST();
 bst.add(4);
