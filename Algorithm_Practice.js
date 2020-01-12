@@ -92,3 +92,29 @@ function pigIt(str) {
 	}
 	return pigArr.join(' ');
 }
+
+// A Hashtag generator for a media company
+function generateHashtag(str) {
+	if (str.length >= 140 || str === '') {
+		return false;
+	} else if (str.charAt(0) === '#') {
+		let egr = str
+			.toLowerCase()
+			.split(' ')
+			.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+			.join(' ')
+			.replace(/ +/g, '');
+		return egr;
+	} else {
+		let chr = str
+			.toLowerCase()
+			.split(' ')
+			.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+			.join(' ')
+			.replace(/ +/g, '');
+
+		let finalChr = '#' + chr;
+		return finalChr;
+	}
+}
+generateHashtag('#hello world');
