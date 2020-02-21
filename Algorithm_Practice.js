@@ -118,3 +118,5 @@ function generateHashtag(str) {
 	}
 }
 generateHashtag('#hello world');
+
+//Udemy practice
